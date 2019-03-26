@@ -1,4 +1,4 @@
-//ogranicen broj iteracija na 1000
+//ogranicen broj operacija na 1000
 $ gcc lab1.c -o lab1
 $ ./lab1
 Proslo vrijeme: 1 , I = 0, MS[I] = 11915076722248833829 , MS[] = { 29 00 00 00 00 00 00 00 00 00 }
@@ -64,7 +64,7 @@ Random number: 0.580532
 
 
 
-//duzi primjer, granica 1000 iteracija
+//duzi primjer, granica 1000 operacija
 $ ./lab1
 Proslo vrijeme: 3 , I = 0, MS[I] = 3866996299151549611 , MS[] = { 11 77 61 67 89 07 53 93 00 00 }
 Proslo vrijeme: 3 , I = 1, MS[I] = 10868703996943314073 , MS[] = { 81 73 67 13 33 97 53 93 23 69 }
@@ -86,7 +86,7 @@ Proslo vrijeme: 5 , I = 5, MS[I] = 15737082486847613267 , MS[] = { 37 39 57 93 9
 
 
 
-//ogranicen broj iteracija na 10000
+//ogranicen broj operacija na 10000
 $ gcc lab1.c -o lab1
 $ ./lab1
 Proslo vrijeme: 3 , I = 0, MS[I] = 15667260372370138277 , MS[] = { 77 13 00 00 00 00 00 00 00 00 }
@@ -116,7 +116,7 @@ Random number: 0.542065
 
 
 
-//ogranicen broj iteracija na 100000
+//ogranicen broj operacija na 100000
 $ gcc lab1.c -o lab1
 $ ./lab1
 Proslo vrijeme: 20 , I = 0, MS[I] = 7373983425177629261 , MS[] = { 61 03 00 00 00 00 00 00 00 00 }
