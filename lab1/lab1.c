@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
-#include <inttypes.h> //ovaj zapravo ukljuèuje prethodni
+#include <inttypes.h> //ovaj zapravo ukljuï¿½uje prethodni
 #include <time.h>
 #include <stdlib.h>
 
@@ -22,7 +22,7 @@ int provjera_zahtjeva(double *t)
         return NIJE_KRAJ;
     else{
         double p = rand()/((double)RAND_MAX); //koristim random broj za utvrdivanje vjerojatnosti
-        //printf("Random number: %f\n", p);
+        printf("Random number: %f\n", p);
         if(p <= 0.5){ // vjerojatnost za novim zahtjevom je 50%
             printf("Proslo vrijeme: %d , ", (int) proslo_vrijeme);
             printf("I = %d, ", sljedeci);
@@ -37,6 +37,7 @@ int provjera_zahtjeva(double *t)
                 printf("%02d ", (int)z); //printamo samo zadnje 2 znamenke
             }
             printf("}\n");
+            return NIJE_KRAJ;
         }
         else if(0.5 < p  && p <= 0.6) //vjerojatnost za zahtjevom za kraj rada je 10%
             return KRAJ_RADA;
@@ -109,7 +110,7 @@ int main()
         broj_operacija = 0;
         while(test_bitovi(x) == LAZ || test_pseudo_prost(x) == LAZ){
             if(x <= 0xffffffffffffffffULL-2 && broj_operacija <= 1000){
-                                                //NAJVEÆI_BROJ = 2^64 - 1 = 0xffffffffffffffffULL
+                                                //NAJVEï¿½I_BROJ = 2^64 - 1 = 0xffffffffffffffffULL
                 x = x + 2;                     //za veci broj operacija traje nekoliko desetaka sekundi
                 broj_operacija += 1;
             }
