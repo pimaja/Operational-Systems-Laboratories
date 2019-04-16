@@ -129,14 +129,14 @@ void *dretva_provjera(void *id){
 		int *d = id;
 		printf("id = %d, ", *d);
 		printf("y = ""%" PRIu64 ",", y);
-		printf("uzeo broj\n");
+		printf(" uzeo broj\n");
 		
 		Izadi_iz_KO(id);
 		
 		sleep(y%5);
 		printf("id = %d, ", *d);
 		printf("y = ""%" PRIu64 ",", y);
-		printf("potrosio broj\n");
+		printf(" potrosio broj\n");
 		
 	}while (kraj!=KRAJ_RADA);
 }
