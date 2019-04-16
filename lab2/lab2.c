@@ -86,7 +86,7 @@ int test_pseudo_prost( uint64_t x )
 
 void *radna_dretva(void *id){
 	do{
-		uint64_t x = ((rand() * A) % B) | 1;
+	uint64_t x = ((rand() * A) % B) | 1;
         //bitwise OR, da bude neparni, ako je parni onda sigurno nije prost
         //printf("Ucitani broj: ");
         //printf ("%" PRIu64 "\n", x);
@@ -104,10 +104,10 @@ void *radna_dretva(void *id){
             }
         }
 		
-		Udi_u_KO(id);
+	Udi_u_KO(id);
 		
-		MS[trenutni] = x;
-		//printf("Popunjeni spremnik MS[%d] s brojem: ", trenutni);
+	MS[trenutni] = x;
+	//printf("Popunjeni spremnik MS[%d] s brojem: ", trenutni);
         //printf ("%" PRIu64 "\n", MS[trenutni]);
         trenutni += 1;
         if (trenutni == 10)
