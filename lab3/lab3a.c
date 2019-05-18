@@ -60,32 +60,32 @@ int test_pseudo_prost( uint64_t x )
 void *radna_dretva(void *id){
 	do{
 		uint64_t x = ((rand() * A) % B) | 1;
-        //bitwise OR, da bude neparni, ako je parni onda sigurno nije prost
-        //printf("Ucitani broj: ");
-        //printf ("%" PRIu64 "\n", x);
-        int broj_operacija = 0;
-        while(test_bitovi(x) == LAZ || test_pseudo_prost(x) == LAZ){
-            if(x <= 0xffffffffffffffffULL-2 && broj_operacija <= 400){
-                x = x + 2;                    
-                broj_operacija += 1;
-            }
-            else{
-                x = ((rand() * A) % B) | 1;
-                //printf("Ucitani broj: ");
-                //printf ("%" PRIu64 "\n", x);
-                broj_operacija = 0;
-            }
-        }
+        	//bitwise OR, da bude neparni, ako je parni onda sigurno nije prost
+        	//printf("Ucitani broj: ");
+        	//printf ("%" PRIu64 "\n", x);
+        	int broj_operacija = 0;
+		while(test_bitovi(x) == LAZ || test_pseudo_prost(x) == LAZ){
+		    if(x <= 0xffffffffffffffffULL-2 && broj_operacija <= 400){
+			x = x + 2;                    
+			broj_operacija += 1;
+		    }
+		    else{
+			x = ((rand() * A) % B) | 1;
+			//printf("Ucitani broj: ");
+			//printf ("%" PRIu64 "\n", x);
+			broj_operacija = 0;
+		    }
+		}
 		
 		sem_wait(&KO);
 		
 		MS[trenutni] = x;
 		//printf("Popunjeni spremnik MS[%d] s brojem: ", trenutni);
-        //printf ("%" PRIu64 "\n", MS[trenutni]);
-        trenutni += 1;
-        if (trenutni == 10)
-            trenutni = 0;
-		
+        	//printf ("%" PRIu64 "\n", MS[trenutni]);
+		trenutni += 1;
+		if (trenutni == 10)
+		    trenutni = 0;
+
 		sem_post(&novi);
 		
 		sem_post(&KO);
