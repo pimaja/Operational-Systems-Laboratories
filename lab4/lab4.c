@@ -78,9 +78,9 @@ void *radna_dretva(void *id){
 		sem_wait(&KO);
 
 		MS[trenutni] = x;
-        trenutni += 1;
-        if (trenutni == 10)
-            trenutni = 0;
+		trenutni += 1;
+		if (trenutni == 10)
+		    trenutni = 0;
 
 		sem_post(&KO);
 
