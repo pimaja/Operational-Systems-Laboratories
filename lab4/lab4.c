@@ -62,18 +62,18 @@ int test_pseudo_prost( uint64_t x )
 
 void *radna_dretva(void *id){
 	do{
-        uint64_t x = ((rand() * A) % B) | 1;
-        int broj_operacija = 0;
-        while(test_bitovi(x) == LAZ || test_pseudo_prost(x) == LAZ){
-            if(x <= 0xffffffffffffffffULL-2 && broj_operacija <= 400){
-                x = x + 2;
-                broj_operacija += 1;
-            }
-            else{
-                x = ((rand() * A) % B) | 1;
-                broj_operacija = 0;
-            }
-        }
+		uint64_t x = ((rand() * A) % B) | 1;
+		int broj_operacija = 0;
+		while(test_bitovi(x) == LAZ || test_pseudo_prost(x) == LAZ){
+		    if(x <= 0xffffffffffffffffULL-2 && broj_operacija <= 400){
+			x = x + 2;
+			broj_operacija += 1;
+		    }
+		    else{
+			x = ((rand() * A) % B) | 1;
+			broj_operacija = 0;
+		    }
+		}
 
 		sem_wait(&KO);
 
@@ -88,20 +88,20 @@ void *radna_dretva(void *id){
 }
 
 int zauzmi(uint64_t velicina, int id_dretve){
-	int i, j, index, test;
+	int i, j, indeks, test;
 	for(i=0; i<5; i++)
 		if(lista_blokova[i]>=velicina){
-			index=0;
+			indeks=0;
 			for(j=0; j<i; j++)
-				index += lista_blokova[j];
+				indeks += lista_blokova[j];
 			test=1;
-			for(j=index; j<index+velicina; j++)
+			for(j=indeks; j<indeks+velicina; j++)
 				if(spremnik[j]!='-'){
 					test=0;
 					break;
 				}
 			if(test==1){
-				for(j=index; j<index+velicina; j++)
+				for(j=indeks; j<indeks+velicina; j++)
 					spremnik[j]=id_dretve+'0';
 				return 1;
 			}
